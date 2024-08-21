@@ -1,0 +1,23 @@
+{
+  "name": "dependency-injection-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:0": "node --import=tsimp/import src/0_ways-to-register/index.ts",
+    "start:1": "node --import=tsimp/import src/1_injection-modes/index.ts",
+    "start:2": "node --import=tsimp/import src/2_factory-functions-and-global/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "express": "^4.19.2",
+    "reflect-metadata": "^0.2.2",
+    "tsimp": "^2.0.11",
+    "tsyringe": "^4.8.0",
+    "typescript": "5.5.4",
+    "@types/node": "^22.4.2"
+  }
+}
