@@ -7,17 +7,25 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:0": "node --import=tsimp/import src/0_ways-to-register/index.ts",
     "start:1": "node --import=tsimp/import src/1_injection-modes/index.ts",
-    "start:2": "node --import=tsimp/import src/2_factory-functions-and-global/index.ts"
+    "start:2": "node --import=tsimp/import src/2_factory-functions-and-global/index.ts",
+    "start:3": "node --import=tsimp/import src/3_async-factory/index.mts",
+    "start:4": "node --import=tsimp/import src/4_override/index.ts",
+    "start:5": "jest --config=./src/5_tests/files/jest.config.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.4.2",
+    "@types/supertest": "^6.0.2",
     "express": "^4.19.2",
+    "jest": "^29.7.0",
     "reflect-metadata": "^0.2.2",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.4",
     "tsimp": "^2.0.11",
     "tsyringe": "^4.8.0",
-    "typescript": "5.5.4",
-    "@types/node": "^22.4.2"
+    "typescript": "5.5.4"
   }
 }

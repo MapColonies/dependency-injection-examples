@@ -18,6 +18,11 @@ export interface InjectionObject<T> {
   provider: Providers<T>;
 }
 
+export interface RegisterOptions {
+  override?: InjectionObject<unknown>[];
+  useChild?: boolean;
+}
+
 export const registerDependencies = (
   dependencies: InjectionObject<unknown>[],
   override?: InjectionObject<unknown>[],
