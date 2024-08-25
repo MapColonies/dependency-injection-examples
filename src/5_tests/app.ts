@@ -1,5 +1,5 @@
 import express, { Application } from "express";
-import { DependencyContainer, inject, injectable } from "tsyringe";
+import { DependencyContainer, inject, injectable, Lifecycle } from "tsyringe";
 import { registerDependencies, RegisterOptions } from "../helper";
 
 @injectable()
@@ -38,7 +38,7 @@ export function app(
   const container = registerDependencies(
     [
       { provider: { useClass: Logger }, token: "logger" },
-      { token: "DB", provider: { useClass: DB } },
+      { token: "DB", provider: { useClass: DB }, lifeCycle: Lifecycle.ContainerScoped },
       { token: "Service", provider: { useClass: Service } },
     ],
     registerOptions?.override,

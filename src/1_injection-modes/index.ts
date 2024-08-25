@@ -49,7 +49,8 @@ class WrapperClass {
 container.register(
   "Counter",
   { useClass: Counter },
-  { lifecycle: Lifecycle.ResolutionScoped }
+  // Change the life cycle and observe what happens
+  { lifecycle: Lifecycle.ContainerScoped }
 );
 
 const wrapper = container.resolve(WrapperClass);

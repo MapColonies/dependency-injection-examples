@@ -5,7 +5,7 @@ import {
   InjectionToken,
   ValueProvider,
 } from "tsyringe";
-import { constructor, DependencyContainer } from "tsyringe/dist/typings/types";
+import { constructor, DependencyContainer, Lifecycle } from "tsyringe/dist/typings/types";
 
 export type Providers<T> =
   | ValueProvider<T>
@@ -16,6 +16,7 @@ export type Providers<T> =
 export interface InjectionObject<T> {
   token: InjectionToken<T>;
   provider: Providers<T>;
+  lifeCycle?: Lifecycle;
 }
 
 export interface RegisterOptions {
@@ -39,7 +40,8 @@ export const registerDependencies = (
     if (inject) {
       container.register(
         injectionObj.token,
-        injectionObj.provider as constructor<unknown>
+        injectionObj.provider as constructor<unknown>,
+        injectionObj.lifeCycle ? {lifecycle: injectionObj.lifeCycle} : undefined
       );
     }
   });
